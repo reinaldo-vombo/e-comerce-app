@@ -1,5 +1,5 @@
 Modern Full Stack ECommerce Application with Stripe & Sanity
-![eCommerce](https://postimg.cc/68sV4m3f)
+![eCommerce]([https://postimg.cc/68sV4m3f](https://i.postimg.cc/zGvx6mY6/Captura-de-Ecr-2.png))
 
 ## Launch your development career with project-based coaching - https://www.jsmastery.pro
 
