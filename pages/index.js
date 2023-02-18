@@ -7,7 +7,7 @@ import {
   Navbar,
   Cart
 } from '../components'
-import { client } from '../../lib/client'
+import { client } from '../lib/client'
 
 const Home = ({ products, bannerData, psProducts }) => {
   return (
@@ -18,10 +18,9 @@ const Home = ({ products, bannerData, psProducts }) => {
         <p>Speakers of many variations</p>
       </div>
       <div className="products-container">
-        {products?.map(
-          (product, index) =>
-            index < 4 && <Product key={product._id} product={product} />
-        )}
+        {products?.map((product, index) => (
+          <Product key={product._id} product={product} />
+        ))}
       </div>
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </>
