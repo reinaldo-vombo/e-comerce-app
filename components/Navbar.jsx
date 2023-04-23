@@ -1,48 +1,59 @@
-import React from 'react'
-import Link from 'next/link'
-import { Cart } from './'
-import { AiOutlineShopping } from 'react-icons/ai'
-import { FaSun, FaMoon } from 'react-icons/fa'
-import { useStateContext } from '../context/StateContext'
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Cart } from './';
+import { AiOutlineShopping } from 'react-icons/ai';
+import { FaSun, FaMoon, FaSearch } from 'react-icons/fa';
+import { GiMoon } from 'react-icons/gi';
+import { useStateContext } from '../context/StateContext';
+import userPhoto from '../assets/user.jpeg';
 
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities, toggleTheme } =
-    useStateContext()
+    useStateContext();
   return (
-    <div className="navbar-container">
-      <p className="logo">
-        <Link href="/">Home</Link>
-      </p>
-      <div>
+    <div className='navbar-container'>
+      <div className='navbar-input__container'>
+        <input type='text' placeholder='pesquisar' className='navbar-input' />
+        <FaSearch className='navbar-icon' />
+      </div>
+      <div className='navabar-items'>
+        <Image
+          src={userPhoto}
+          width={40}
+          height={40}
+          className='user-photo'
+          alt='user photo'
+        />
         <button
-          className="cart-icon sun"
+          className='cart-icon sun'
           onClick={toggleTheme}
-          type="button"
-          aria-label="sun icon"
+          type='button'
+          aria-label='sun icon'
         >
-          <FaSun className="sunIcon" />
+          <FaSun size={30} className='sunIcon' />
         </button>
         <button
-          className="cart-icon moon"
+          className='cart-icon moon'
           onClick={toggleTheme}
-          type="button"
-          aria-label="sun icon"
+          type='button'
+          aria-label='sun icon'
         >
-          <FaMoon className="" />
+          <GiMoon size={30} />
         </button>
         <button
-          className="cart-icon"
+          className='cart-icon'
           onClick={() => setShowCart(true)}
-          type="button"
-          aria-label="cart icon"
+          type='button'
+          aria-label='cart icon'
         >
-          <AiOutlineShopping />
-          <span className="cart-item-qty">{totalQuantities}</span>
+          <AiOutlineShopping size={30} />
+          <span className='cart-item-qty'>{totalQuantities}</span>
         </button>
       </div>
       {showCart && <Cart />}
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
