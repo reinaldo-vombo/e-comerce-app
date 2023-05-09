@@ -1,31 +1,45 @@
-import React from 'react'
-import Link from 'next/link'
-import { urlFor } from '../lib/client'
+import React from 'react';
+import Link from 'next/link';
+import { urlFor } from '../lib/client';
+import { BsPlay } from 'react-icons/bs';
+import Slider from 'react-slick';
 
 const HeroBanner = ({ heroBanner }) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: 'linear',
+  };
   return (
-    <div className="hero-banner-container">
-      <div>
-        <p className="beats-solo">{heroBanner.smallText}</p>
+    <div className='hero-banner-container'>
+      <div className='hero-banner-desc'>
         <h3>{heroBanner.midText}</h3>
-        <h1>{heroBanner.largeText1}</h1>
-        <img
-          src={urlFor(heroBanner.image)}
-          alt="headphones"
-          className="hero-banner-image"
-        />
-      </div>
-      <div>
-        <Link href={`/product/${heroBanner.product}`}>
-          <button type="button">{heroBanner.buttonText}</button>
-        </Link>
-        <div className="desc">
-          <h5>Description</h5>
-          <p>{heroBanner.desc}</p>
+        <p>{heroBanner.desc}</p>
+        <div>
+          <Link href={`/product/${heroBanner.product}`}>
+            <button type='button'>{heroBanner.buttonText}</button>
+          </Link>
+          <button
+            className='hero-banner-video'
+            type='button'
+            aria-label='play button'
+          >
+            <BsPlay />
+          </button>
         </div>
       </div>
+      <img
+        src={urlFor(heroBanner.image)}
+        alt='headphones'
+        className='hero-banner-image'
+      />
     </div>
-  )
-}
+  );
+};
 
-export default HeroBanner
+export default HeroBanner;
