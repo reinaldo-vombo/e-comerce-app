@@ -17,9 +17,6 @@ const Layout = ({ children }) => {
         <header className='header'>
           <Navbar />
         </header>
-        <section className='sidebar'>
-          <Sidebar />
-        </section>
         <main className='main'>{children}</main>
         <footer>
           <Footer />

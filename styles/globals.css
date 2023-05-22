@@ -62,36 +62,40 @@ a {
   margin-right: 5px;
   object-fit: cover;
 }
-.layout{
-  display: grid;
-  gap: 1rem;
-  height: 100vh;
-  grid-template-columns: 229px 1fr;
-  grid-template-rows: 60px 1fr;
-  grid-template-areas: 
-    "side header"
-    "side main";
+.my-carosel img{
+  object-fit: cover;
 }
+.my-nav {
+  z-index: 2;
+}
+.my-nav .navbar-nav a {
+  color: #fff;
+}
+.carosel-imgl{
+  position: relative;
+}
+
 .hearder{
   background: #000;
   grid-area: header;
-}
-.main{
-  grid-area: main;
 }
 .sidebar{
   background: gainsboro;
   grid-area: side;
 }
-/* .layout{
-  padding: 10px;
-} */
 .navbar-container{
   position: relative;
   position: relative;
   display: flex;
   align-items: baseline;
   z-index: 1;
+}
+.rr{
+  width: 100%;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-right: auto;
+	margin-left: auto;
 }
 .navbar-input__container{
   margin-right: 40rem;
@@ -103,11 +107,11 @@ a {
   top: 5px;
 }
 .navbar-input{
-  padding: 7px 7px;
+  padding: 11px 7px;
   background: gainsboro;
   width: 18rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 9px;
   position: relative;
 }
 .navabar-items{

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { urlFor } from '../lib/client';
 import { BsPlay } from 'react-icons/bs';
 import Slider from 'react-slick';
+import Sidebar from './Sidebar';
 
 const HeroBanner = ({ heroBanner }) => {
   const settings = {
